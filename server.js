@@ -26,7 +26,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/js', (req, res) => {
 	try {
-		res.sendFile(path.join(__dirname, './public/index.js'));
+		res.sendFile(path.join(__dirname, './public/server.js'));
 		rollbar.info('index.js file served succesfully');
 	} catch (err) {
 		alert(err + 'functionality might not work, try reloading.');
