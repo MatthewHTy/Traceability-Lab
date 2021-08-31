@@ -33,7 +33,7 @@ app.get('/js', (req, res) => {
         nonExistentFunction()
 	} catch (err) {
 		alert(err);
-		rollbar.critical('js error.');
+		rollbar.warning('js error.');
 	}
 });
 
