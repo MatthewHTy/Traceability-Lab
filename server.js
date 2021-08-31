@@ -37,6 +37,17 @@ app.get('/js', (req, res) => {
 	}
 });
 
+app.get('/js', (req, res) => {
+	try {
+		// res.sendFile(path.join(__dirname, './public/server.js'));
+		// rollbar.info('file served succesfully');
+        nonExistentFunction()
+	} catch (err) {
+		alert(err);
+		rollbar.warning('js error.');
+	}
+});
+
 // try {
 //     nonExistentFunction();
 // } catch (error) {
