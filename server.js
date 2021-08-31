@@ -24,21 +24,24 @@ app.get('/', (req, res, next) => {
 	}
 });
 
+
+
 app.get('/js', (req, res) => {
 	try {
-		res.sendFile(path.join(__dirname, './public/server.js'));
-		rollbar.info('index.js file served succesfully');
+		// res.sendFile(path.join(__dirname, './public/server.js'));
+		// rollbar.info('file served succesfully');
+        nonExistentFunction()
 	} catch (err) {
-		alert(err + 'functionality might not work, try reloading.');
-		rollbar.critical('Index.js never got served.');
+		alert(err + 'error, try reloading.');
+		rollbar.critical('js is not available.');
 	}
 });
 
-try {
-    nonExistentFunction();
-} catch (error) {
-    console.error(error)
-}
+// try {
+//     nonExistentFunction();
+// } catch (error) {
+//     console.error(error)
+// }
 
 const port = process.env.PORT || 4545
 
