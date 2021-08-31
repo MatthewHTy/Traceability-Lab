@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully.')
 })
 
+try {
+    nonExistentFunction();
+} catch (error) {
+    console.error(error)
+}
 
 const port = process.env.PORT || 4545
 
