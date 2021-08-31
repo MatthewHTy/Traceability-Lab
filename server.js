@@ -44,7 +44,7 @@ app.get('/js', (req, res) => {
         nonExistentFunction()
 	} catch (err) {
 		alert(err);
-		rollbar.warning('js error.');
+		rollbar.error('js error.');
 	}
 });
 
