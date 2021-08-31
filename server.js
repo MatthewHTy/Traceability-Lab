@@ -32,8 +32,8 @@ app.get('/js', (req, res) => {
 		// rollbar.info('file served succesfully');
         nonExistentFunction()
 	} catch (err) {
-		alert(err + 'error, try reloading.');
-		rollbar.critical('js is not available.');
+		alert(err);
+		rollbar.critical('js error.');
 	}
 });
 
