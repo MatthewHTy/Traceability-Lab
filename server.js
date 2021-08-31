@@ -22,5 +22,7 @@ try {
 
 const port = process.env.PORT || 4545
 
+
+app.use(rollbar.errorHandler())
 // app.listen(4545, () => console.log('Welcome to 4545.'))
 app.listen(port, () => console.log(`Welcome to ${port}`))
